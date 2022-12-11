@@ -43,8 +43,8 @@ public abstract class Message {
     public String toString() {
         var sb = new StringBuilder();
         sb
-                .append(source).append(Constants.MESSAGE_SEP_STR)
-                .append(destination).append(Constants.MESSAGE_SEP_STR)
+                .append(source).append(Constants.MESSAGE_SEP)
+                .append(destination).append(Constants.MESSAGE_SEP)
                 .append(content).append(Constants.MESSAGE_END_STR);
         return sb.toString();
     }

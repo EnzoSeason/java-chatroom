@@ -22,7 +22,7 @@ public class SimpleServerTask implements ServerTaskRunnable {
 
     @Override
     public void run() {
-        System.out.println("Connecting " + socket.getRemoteSocketAddress());
+        System.out.println("Connected " + socket.getRemoteSocketAddress());
         SimpleChannel channel;
         try {
             channel = new SimpleChannel(socket);
@@ -81,11 +81,9 @@ public class SimpleServerTask implements ServerTaskRunnable {
         String errorMsg = null;
         while (true) {
             channel.send(new SimpleMessage(Constants.ADMIN_CLIENT, Constants.ANON_CLIENT,
-                    (errorMsg == null
-                            ? ""
-                            : "Invalid username: " + errorMsg +
-                            "\nCurrent used usernames: " + String.join(", ", getAllClientNames()) +
-                            "\nPlease enter a username different from listed usernames.")));
+                    (errorMsg == null ? "" : "Invalid username: " + errorMsg) +
+                            " Current used usernames: " + String.join(", ", getAllClientNames()) +
+                            " Please enter a username different from listed usernames."));
             try {
                 var message = channel.receive();
                 var clientName = message.getContent();

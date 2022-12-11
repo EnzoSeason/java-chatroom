@@ -3,8 +3,8 @@ package common;
 public class SimpleMessage extends Message {
 
     static SimpleMessage Builder(String message) {
-        var sourceEnd = message.indexOf(Constants.MESSAGE_SEP_STR);
-        var destinationEnd = message.indexOf(Constants.MESSAGE_SEP_STR, sourceEnd + 1);
+        var sourceEnd = message.indexOf(Constants.MESSAGE_SEP);
+        var destinationEnd = message.indexOf(Constants.MESSAGE_SEP, sourceEnd + 1);
 
         var source = message.substring(0, sourceEnd);
         var destination = message.substring(sourceEnd + 1, destinationEnd);
