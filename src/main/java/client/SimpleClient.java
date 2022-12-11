@@ -33,6 +33,7 @@ public class SimpleClient implements Client {
                         System.out.println("Left the Chat, Bye");
                         System.exit(0);
                     }
+                    System.out.println("from \"" + message.getSource() + "\":" + message.getContent());
                 } catch (IOException e) {
                     e.printStackTrace();
                     channel.close();
@@ -64,7 +65,7 @@ public class SimpleClient implements Client {
                 if (line.startsWith(Constants.CLIENT_PREFIX)) {
                     destination = line.substring(1, line.indexOf(Constants.SPACE_STR));
                     var clientNameHelper = new SimpleClientNameHelper();
-                    var namingError = clientNameHelper.isValidName(destination);
+                    var namingError = clientNameHelper.isValidMessageDestination(destination);
                     if (namingError == null) {
                         messageDestination = destination;
                         content = line.substring(line.indexOf(Constants.SPACE_STR) + 1);
