@@ -8,7 +8,7 @@ public class SimpleMessage extends Message {
 
         var source = message.substring(0, sourceEnd);
         var destination = message.substring(sourceEnd + 1, destinationEnd);
-        var content = message.substring(destinationEnd + 1).trim();
+        var content = message.substring(destinationEnd + 1);
 
         return new SimpleMessage(source, destination, content);
     }

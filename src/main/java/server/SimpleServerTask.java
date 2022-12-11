@@ -93,6 +93,7 @@ public class SimpleServerTask implements ServerTaskRunnable {
                 if (errorMsg == null && !platform.containsKey(clientName)) {
                     this.clientName = clientName;
                     platform.put(clientName, channel);
+                    channel.send(new SimpleMessage(Constants.ADMIN_CLIENT, clientName, Constants.CLIENT_NAME_CREATED));
                     channel.send(new SimpleMessage(Constants.ADMIN_CLIENT, clientName, Constants.WELCOME));
                     return;
                 }

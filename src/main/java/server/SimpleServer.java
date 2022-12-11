@@ -21,7 +21,7 @@ public class SimpleServer implements Server {
 
     @Override
     public void start() throws IOException {
-        System.out.println("Simple Chat Room Server starts");
+        System.out.println("Simple Chat Server starts");
         var ss = new ServerSocket(port);
         while (true) {
             var socket = ss.accept();

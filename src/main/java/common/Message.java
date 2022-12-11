@@ -14,7 +14,7 @@ public abstract class Message {
     protected Message(String source, String destination, String content) {
         this.source = source;
         this.destination = destination;
-        this.content = content;
+        this.content = content.trim();
     }
 
 
