@@ -38,4 +38,14 @@ public abstract class Message {
     public String getContent() {
         return content;
     }
+
+    @Override
+    public String toString() {
+        var sb = new StringBuilder();
+        sb
+                .append(source).append(Constants.MESSAGE_SEP_STR)
+                .append(destination).append(Constants.MESSAGE_SEP_STR)
+                .append(content).append(Constants.MESSAGE_END_STR);
+        return sb.toString();
+    }
 }
