@@ -52,4 +52,9 @@ public class SimpleChannel implements Channel {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void heartbeat() {
+        // TODO
+    }
 }
