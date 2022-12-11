@@ -55,6 +55,6 @@ public class SimpleChannel implements Channel {
 
     @Override
     public void heartbeat() {
-        // TODO
+        // TODO study https://time.geekbang.org/course/detail/100027801-113682
     }
 }
